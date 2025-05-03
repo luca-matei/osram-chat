@@ -32,9 +32,9 @@ jobs:
         script: |
           rm -rf /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
           mv /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}-temp /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
-          
+
           cd /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
 
           /bin/bash build.sh
 
-          sudo systemctl restart ${{ vars.APP_NAME }}
+          sudo systemctl restart ${{ secrets.SERVICE_NAME }}
