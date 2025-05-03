@@ -30,13 +30,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          rm -rf /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
-          mv /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}-temp /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
-
-          cd /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
-
-          cp /etc/webapps/${{ secrets.SERVICE_NAME }}.env .env
-
-          /bin/bash build.sh
-
-          sudo systemctl restart ${{ secrets.SERVICE_NAME }}
+          /home/${{ secrets.USERNAME }}/digital_marmot/deploy.sh "${{ vars.APP_NAME }}" "${{ secrets.SERVICE_NAME }}" "${{ secrets.USERNAME }}"
