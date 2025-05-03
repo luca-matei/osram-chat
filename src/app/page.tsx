@@ -17,7 +17,7 @@ export default function Home() {
     // Fetch PDFs from the API
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/sources`, {
       headers: {
-        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAI_KEY}`
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
       }
     })
       .then(res => res.json())
@@ -44,7 +44,7 @@ export default function Home() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAI_KEY}`
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`
         },
         body: JSON.stringify({ query }),
       });

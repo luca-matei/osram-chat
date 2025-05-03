@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hello World",
-  description: "Default description",
+  title: "OSRAM Chat",
+  description: "OSRAM Chat is a chatbot that can help you find information about OSRAM products.",
 };
 
 export default function RootLayout({
