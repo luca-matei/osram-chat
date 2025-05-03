@@ -35,6 +35,8 @@ jobs:
 
           cd /home/${{ secrets.USERNAME }}/digital_marmot/${{ vars.APP_NAME }}
 
+          cp /etc/webapps/${{ secrets.SERVICE_NAME }}.env .env
+
           /bin/bash build.sh
 
           sudo systemctl restart ${{ secrets.SERVICE_NAME }}
